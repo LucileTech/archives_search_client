@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap");
+
+.body {
+  font-family: "Montserrat";
+}
+
+.creations-images-all-creations {
+  height: 17rem;
+  width: 17rem;
+  object-fit: cover;
+  filter: drop-shadow(0px 0.5px 10px rgba(255, 255, 255, 0.15));
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  border-radius: 50%;
+}
+
+.creations-images-view-more {
+  height: 17rem;
+  width: 17rem;
+  object-fit: cover;
+  filter: drop-shadow(0px 0.5px 10px rgba(255, 255, 255, 0.15));
+  filter: saturate(0);
+  margin: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: rgba(217, 217, 217, 0.3);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+/* .hide {
+  display: none;
+} */
+
+.creations-images-all-creations:hover {
+  filter: saturate(0);
+  /* display: block;
+  color: red; */
+}
+
+.all-creations-home-page {
+  display: flex;
+  flex-direction: row;
+  overflow: scroll;
+}
+
+.artist-details {
+  font-family: "Montserrat";
+}
+
+.creation-paragraph-title {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 32px;
+  /* or 128% */
+
+  color: rgba(255, 255, 255, 0.6);
+  padding-top: 1rem;
+  padding-left: 1rem;
+  margin-bottom: 2rem;
+}

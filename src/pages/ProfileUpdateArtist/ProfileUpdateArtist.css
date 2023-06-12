@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap");
+
+.body {
+  font-family: "Montserrat";
+}
+
+.update-artist-presentation {
+  display: flex;
+  flex-direction: row;
+}
+
+.update-artist-details {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5%;
+}
+
+.update-artist-details-name {
+  margin-bottom: 5%;
+  width: 50vw;
+}
+
+.update-artist-details-description {
+  width: 50vw;
+  height: 12rem;
+}
+
+.update-artist-picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15rem;
+  width: 15rem;
+  object-fit: cover;
+  margin-left: 10%;
+  margin-right: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  background-color: #d9d9d9;
+}
+
+#update-picture {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  margin: 10%;
+}
+
+.submit-button-update-artist {
+  background: #22223b;
+  border: 2px solid #000000;
+  width: 15vw;
+  min-width: 5rem;
+  height: 5vh;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #ffffff;
+  left: 44.79%;
+  right: 44.8%;
+  top: 68.16%;
+  bottom: 29.86%;
+  cursor: pointer;
+  border-radius: 0.8rem;
+  font-family: "Montserrat";
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+.update-object-of-artist-details {
+  background-color: #22223b;
+
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 32px;
+  /* or 128% */
+
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.update-one-artist-creations {
+  margin: 1rem;
+  padding-top: 1rem;
+}
+
+.update-creations-images-one-artist {
+  height: 17rem;
+  width: 17rem;
+  object-fit: cover;
+  filter: drop-shadow(0px 0.5px 10px rgba(255, 255, 255, 0.15));
+  margin: 2rem;
+  border-radius: 50%;
+}
+
+.all-creations-update-artist-page {
+  display: flex;
+  flex-direction: row;
+  overflow: scroll;
+}
+
+.div-for-submit-button-update-artist {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+.create-creations-images-one-artist {
+  height: 4rem;
+}
+
+.create-creations-images-one-artist:hover {
+  transform: scale(1.2);
+}
+
+@media (max-width: 1000px) {
+  .submit-button-update-artist {
+    font-size: 0.5rem;
+  }
+}

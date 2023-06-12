@@ -1,0 +1,72 @@
+body {
+  overflow-x: hidden;
+  min-height: 100%;
+  width: 100%;
+}
+
+.logo-octopus-home-page {
+  width: 40%;
+  padding: 2rem;
+}
+
+h6 {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.6rem;
+  /* font-size: calc(0.9rem + 2vw); */
+  line-height: 32px;
+  /* or 119% */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 60%;
+
+  color: #000000;
+  margin-bottom: 2rem;
+}
+
+.intro-home-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+
+.artists-home-page {
+  background-color: #22223b;
+}
+
+.creations-home-page {
+  background-color: #22223b;
+}
+
+@media (max-width: 650px) {
+  .link-navbar-responsive {
+    padding-bottom: 0.2rem;
+  }
+  .artists-creations,
+  .responsive-loggin {
+    margin-left: 0.5rem;
+  }
+  .navbar-login-register-link {
+    font-size: 10%;
+  }
+  #button-log-out-navbar {
+    font-size: 10%;
+  }
+  .navbar-artist-creation-link {
+    font-size: 10%;
+  }
+  .logo-nav-bar {
+    width: 4.5rem;
+  }
+  .card-logo-nav-bar {
+    width: 3rem;
+  }
+  h6 {
+    font-size: 1.1rem;
+  }
+}

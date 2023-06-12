@@ -1,0 +1,15 @@
+#thanks-order {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+#thanks-order h3 {
+  margin-bottom: 2rem;
+}
+
+#thanks-order p {
+  font-size: 1.1rem;
+}

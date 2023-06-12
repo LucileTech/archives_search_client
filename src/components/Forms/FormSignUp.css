@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap");
+
+.logo-octopus-sign-up-page {
+  width: 10rem;
+  margin-top: 1rem;
+}
+
+.signup {
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat";
+}
+
+#signup-form {
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat";
+}
+
+.register-word-log-up-page {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 3rem;
+  /* identical to box height */
+
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.015em;
+  padding-left: 1rem;
+  width: 20rem;
+
+  color: #22223b;
+}
+
+.signup-checkbox {
+  background: #ffffff;
+  width: 18rem;
+  height: 2.5rem;
+  top: 29rem;
+  left: 34rem;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 0.2rem;
+  padding: 0.5rem;
+  font-family: "Montserrat";
+}
+
+.signup-input {
+  background: #f5f5f5;
+  border: 2px solid #000000;
+  width: 18rem;
+  height: 2.5rem;
+  top: 29rem;
+  left: 34rem;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1rem;
+  display: flex;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  font-family: "Montserrat";
+}
+
+#register-button {
+  background: #22223b;
+  border: 2px solid #000000;
+  width: 19vw;
+  min-width: 5rem;
+  height: 6vh;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #ffffff;
+  left: 44.79%;
+  right: 44.8%;
+  top: 68.16%;
+  bottom: 29.86%;
+  cursor: pointer;
+  border-radius: 10px;
+  font-family: "Montserrat";
+}

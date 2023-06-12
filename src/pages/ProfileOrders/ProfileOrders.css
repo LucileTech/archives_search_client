@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap");
+
+.body {
+  font-family: "Montserrat";
+}
+
+.your-orders-on-profile {
+  font-family: "Montserrat";
+  padding: 2rem;
+  margin-left: 10%;
+}
+
+.one-order {
+  border: 2px solid black;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 2%;
+}
+
+.bold {
+  font-weight: bolder;
+}

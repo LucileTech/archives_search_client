@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap");
+
+.body {
+  font-family: "Montserrat";
+}
+
+.artist-presentation {
+  display: flex;
+  flex-direction: row;
+}
+
+.artist-details {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5%;
+}
+
+.artist-details-name {
+  margin-bottom: 5%;
+}
+
+.artist-details-description {
+  width: 75%;
+}
+
+.artist-picture {
+  height: 15rem;
+  width: 15rem;
+  object-fit: cover;
+  margin-left: 10%;
+  margin-right: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.object-of-artist-details {
+  background-color: #22223b;
+
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 32px;
+  /* or 128% */
+
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.one-artist-creations {
+  margin: 1rem;
+  padding-top: 1rem;
+}
+
+.creations-images-one-artist {
+  height: 17rem;
+  width: 17rem;
+  object-fit: cover;
+  filter: drop-shadow(0px 0.5px 10px rgba(255, 255, 255, 0.15));
+  margin: 2rem;
+  border-radius: 50%;
+}
+
+.all-creations-artist-page {
+  display: flex;
+  flex-direction: row;
+  overflow: scroll;
+}
+
+@media (max-width: 800px) {
+  .artist-presentation {
+    flex-wrap: wrap;
+    padding-left: 1rem;
+  }
+}
