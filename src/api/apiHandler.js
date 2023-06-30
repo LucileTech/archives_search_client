@@ -24,11 +24,11 @@ const service = {
   ...apiHandler,
 
   //GET
-  // we are getting all artists
+  // we are getting all contributors
 
-  getAllArtists() {
+  getAllcontributors() {
     return service
-      .get("/artists")
+      .get("/contributors")
       .then((res) => {
       
         return res.data;
@@ -48,11 +48,11 @@ const service = {
       .catch(errorHandler);
   },
 
-    // we are getting all creations
+    // we are getting all archives
 
-  getAllCreations() {
+  getAllarchives() {
     return service
-      .get("/creations")
+      .get("/archives")
       .then((res) => {
         
         return res.data;
@@ -72,11 +72,11 @@ const service = {
       .catch(errorHandler);
   },
 
-    // we are getting one specific creation
+    // we are getting one specific archive
 
-  getOneCreation(id) {
+  getOnearchive(id) {
     return service
-      .get(`/creations/${id}`)
+      .get(`/archives/${id}`)
       .then((res) => {
         
         return res.data;
@@ -84,11 +84,11 @@ const service = {
       .catch(errorHandler);
   },
 
-      // we are getting one specific artist
+      // we are getting one specific contributor
 
-  getOneArtist(id) {
+  getOnecontributor(id) {
     return service
-      .get(`/artists/${id}`)
+      .get(`/contributors/${id}`)
       .then((res) => {
         
         return res.data;
@@ -96,11 +96,11 @@ const service = {
       .catch(errorHandler);
   },
 
-      // we are getting the creations of a specific artists
+      // we are getting the archives of a specific contributors
 
-  getArtistCreations(id) {
+  getcontributorarchives(id) {
     return service
-      .get(`/artists/${id}/creations`)
+      .get(`/contributors/${id}/archives`)
       .then((res) => {
         
         return res.data;
@@ -108,11 +108,11 @@ const service = {
       .catch(errorHandler);
   },
 
-      // we are getting one specific artist
+      // we are getting one specific contributor
 
-  getMyArtist() {
+  getMycontributor() {
     return service
-      .get("/myartist")
+      .get("/mycontributor")
       .then((res) => {
         
         return res.data;
@@ -120,11 +120,11 @@ const service = {
       .catch(errorHandler);
   },
 
-      // we are getting creations of artist connected
+      // we are getting archives of contributor connected
 
-  getMyCreations() {
+  getMyarchives() {
     return service
-      .get("/mycreations")
+      .get("/myarchives")
       .then((res) => {
         
         return res.data;
@@ -134,11 +134,11 @@ const service = {
 
   // POST
 
-    // We add a specific creation to the cart
+    // We add a specific archive to the cart
 
   postAddToCart(id) {
     return service
-      .post(`/creations/${id}/addtocart`)
+      .post(`/archives/${id}/addtocart`)
       .then((res) => {
        
         return res.data;
@@ -146,11 +146,11 @@ const service = {
       .catch(errorHandler);
   },
 
-  // Create the profile of the artist
+  // Create the profile of the contributor
 
-  createArtist(formDataArtist) {
+  createcontributor(formDatacontributor) {
     return service 
-    .post("/artists/form", formDataArtist)
+    .post("/contributors/form", formDatacontributor)
     .then((res) => {
         return res.data;
       })
@@ -159,11 +159,11 @@ const service = {
     });
   },
 
-  // Create a new creation for the artist connected
+  // Create a new archive for the contributor connected
 
-  createCreation(formDataCreation) {
+  createarchive(formDataarchive) {
     return service 
-    .post("/creations/form", formDataCreation)
+    .post("/archives/form", formDataarchive)
     .then((res) => {
         return res.data;
       })
@@ -174,11 +174,11 @@ const service = {
 
   // PATCH
 
-  // we increment the number of a creation in cart
+  // we increment the number of a archive in cart
 
-  patchIncrementCreationToOrder(creationId) {
+  patchIncrementarchiveToOrder(archiveId) {
     return service
-      .patch(`/orderCart/increment/${creationId}`)
+      .patch(`/orderCart/increment/${archiveId}`)
       .then((res) => {
       
         return res.data;
@@ -186,11 +186,11 @@ const service = {
       .catch(errorHandler);
   },
 
-    // we decrement the number of a creation in cart
+    // we decrement the number of a archive in cart
 
-  patchDecrementCreationToOrder(creationId) {
+  patchDecrementarchiveToOrder(archiveId) {
     return service
-      .patch(`/orderCart/decrement/${creationId}`)
+      .patch(`/orderCart/decrement/${archiveId}`)
       .then((res) => {
         
         return res.data;
@@ -198,13 +198,13 @@ const service = {
       .catch(errorHandler);
   },
 
-  // update a specific creation of the artist connected
+  // update a specific archive of the contributor connected
 
-  patchUpdateCreation(formDataUpdatedCreation, id) {
+  patchUpdatearchive(formDataUpdatedarchive, id) {
     return service 
     .patch(
-      `/myCreation/${id}/update`,
-      formDataUpdatedCreation
+      `/myarchive/${id}/update`,
+      formDataUpdatedarchive
     )
     .then((res) => {
         return res.data;
@@ -214,13 +214,13 @@ const service = {
     })
   },
 
-    // update the artist page
+    // update the contributor page
 
-  patchUpdateArtist(formDataUpdatedArtist) {
+  patchUpdatecontributor(formDataUpdatedcontributor) {
     return service 
     .patch(
-      "/myArtist/update",
-      formDataUpdatedArtist
+      "/mycontributor/update",
+      formDataUpdatedcontributor
     )
     .then((res) => {
         return res.data;
@@ -257,9 +257,9 @@ const service = {
       .catch(errorHandler);
   },
 
-  // Delete one creation in cart
+  // Delete one archive in cart
 
-  deleteCreationCart(productId) {
+  deletearchiveCart(productId) {
     return service
       .patch(`/orderCart/${productId}`)
       .then((res) => {
@@ -269,10 +269,10 @@ const service = {
       .catch(errorHandler);
   },
 
-  // Delete artist profile
-  deleteArtist() {
+  // Delete contributor profile
+  deletecontributor() {
     return service
-      .delete(`/myArtist/delete`)
+      .delete(`/mycontributor/delete`)
        .then((res) => {
       
         return res.data;
@@ -281,10 +281,10 @@ const service = {
   },
       
  
-// Delete one creation in the artist profile
-  deleteCreationArtistProfile(id) {
+// Delete one archive in the contributor profile
+  deletearchivecontributorProfile(id) {
     return service
-      .delete(`/creationinprofile/${id}/delete`)
+      .delete(`/archiveinprofile/${id}/delete`)
       .then((res) => {
        
         return res.data;

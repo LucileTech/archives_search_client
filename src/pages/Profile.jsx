@@ -6,15 +6,17 @@ import useAuth from "../auth/useAuth";
 
 const Profile = () => {
   const { currentUser } = useAuth();
-  const [artists, setArtists] = useState([]);
+  const [contributors, setcontributors] = useState([]);
 
-  // Find the artist related to the user if there is one
-  const artistPageExists = artists.filter((el) => el.user === currentUser._id);
+  // Find the contributor related to the user if there is one
+  const contributorPageExists = contributors.filter(
+    (el) => el.user === currentUser._id
+  );
 
-  // To add the new artist to all artists
+  // To add the new contributor to all contributors
   useEffect(() => {
-    apiHandler.getAllArtists().then((data) => {
-      setArtists(data);
+    apiHandler.getAllcontributors().then((data) => {
+      setcontributors(data);
     });
   }, []);
 
@@ -27,21 +29,21 @@ const Profile = () => {
           {" "}
           <Link to="/profile/orders">Your orders</Link>{" "}
         </button>
-        {/* If the user is an artist he can have access to the create and update artist profile page + add and update his creation but if the user is not an artist he has just access to his orders */}
-        {!currentUser.isArtist ? (
+        {/* If the user is an contributor he can have access to the create and update contributor profile page + add and update his archive but if the user is not an contributor he has just access to his orders */}
+        {!currentUser.iscontributor ? (
           ""
-        ) : artistPageExists.length ? (
-          // If the artist user has already created his profile he has now only access to the update artist profile page
+        ) : contributorPageExists.length ? (
+          // If the contributor user has already created his profile he has now only access to the update contributor profile page
           <button className="button-on-profile">
             {" "}
-            <Link to="/profile/artists/updateartistpage">
+            <Link to="/profile/contributors/updatecontributorpage">
               Update creator page
             </Link>{" "}
           </button>
         ) : (
           <button className="button-on-profile">
             {" "}
-            <Link to="/profile/artists/createartist">
+            <Link to="/profile/contributors/createcontributor">
               Create your creator page
             </Link>{" "}
           </button>

@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-// props from creationlist
+// props from archivelist
 const NavSearchByCategory = ({
-  creations,
-  searchCreationCategoryString,
-  setSearchCreationCategoryString,
+  archives,
+  searcharchiveCategoryString,
+  setSearcharchiveCategoryString,
 }) => {
-  // To search creation by category
-  const handleCreationCategorySearch = (e) => {
-    setSearchCreationCategoryString(e.target.value);
+  // To search archive by category
+  const handlearchiveCategorySearch = (e) => {
+    setSearcharchiveCategoryString(e.target.value);
   };
 
   // To clear the input when you are doing another research by category
@@ -18,38 +18,38 @@ const NavSearchByCategory = ({
   };
 
   //every categories are pushed in an array
-  const creationCategories = [];
-  for (let i = 0; i < creations.length; i++) {
-    creationCategories.push(creations[i].categories[0]);
+  const archiveCategories = [];
+  for (let i = 0; i < archives.length; i++) {
+    archiveCategories.push(archives[i].categories[0]);
   }
   //Set Find unique values from an array in React/js / here the categories become unique
-  const uniqueCreationCategories = [...new Set(creationCategories)];
+  const uniquearchiveCategories = [...new Set(archiveCategories)];
 
   return (
     <div className="search-navbar-entire">
       <div className="search-nav-bar">
-        <Link to="/creations">
+        <Link to="/archives">
           <img
             className="search-logo-nav-bar"
             src="https://res.cloudinary.com/dsioshcio/image/upload/v1670414363/next_ysiu0b.png"
             alt="logo-search"
           ></img>{" "}
         </Link>
-        {/* input that search creation by categorie, on change of this input handleCreationCategorySearch pass the value to SearchCreationCategoryString that are defined in creationList */}
+        {/* input that search archive by categorie, on change of this input handlearchiveCategorySearch pass the value to SearcharchiveCategoryString that are defined in archiveList */}
         <input
           className="search-navbar-input"
-          value={searchCreationCategoryString}
+          value={searcharchiveCategoryString}
           type="text"
           list="data"
           // display all categories again when the user click again
           onClick={clear}
           onFocus={clear}
           placeholder="Search by category"
-          onChange={handleCreationCategorySearch}
+          onChange={handlearchiveCategorySearch}
         />
-        {/* //datalist display every categories in allcreations */}
+        {/* //datalist display every categories in allarchives */}
         <datalist id="data">
-          {uniqueCreationCategories.map((element) => (
+          {uniquearchiveCategories.map((element) => (
             <option key={element} value={element} />
           ))}
         </datalist>

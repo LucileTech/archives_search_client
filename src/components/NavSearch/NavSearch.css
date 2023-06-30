@@ -47,7 +47,7 @@ body {
   padding: 0 0.3rem;
 }
 
-.search-creation-categorie {
+.search-archive-categorie {
   background-color: #22223b;
   color: white;
   border: 0px solid;
@@ -58,7 +58,7 @@ body {
   outline: none;
 }
 
-input[name="search-creation-categorie"] {
+input[name="search-archive-categorie"] {
   width: 100%;
   font-size: 1rem;
   color: white;

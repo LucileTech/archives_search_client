@@ -4,15 +4,15 @@ import "./ProfileOrders.css";
 
 const ProfileOrders = () => {
   const [orders, setOrders] = useState([]);
-  const [creations, setCreations] = useState([]);
+  const [archives, setarchives] = useState([]);
 
-  // Find orders of the current user and details of the creations
+  // Find orders of the current user and details of the archives
   useEffect(() => {
     apiHandler.getAllOrders().then((res) => {
       setOrders(res);
     });
-    apiHandler.getAllCreations().then((res) => {
-      setCreations(res);
+    apiHandler.getAllarchives().then((res) => {
+      setarchives(res);
     });
   }, []);
 
@@ -31,19 +31,19 @@ const ProfileOrders = () => {
             <p>
               Date : <span className="bold">{order.date.slice(0, 10)}</span>
             </p>
-            {order.creations.map((element) => {
+            {order.archives.map((element) => {
               return (
                 <div key={element._id}>
-                  {/* Ternary on the name of creation bought if creation deleted by artist */}
-                  {!creations.find(
-                    (creation) => creation._id === element.productId
+                  {/* Ternary on the name of archive bought if archive deleted by contributor */}
+                  {!archives.find(
+                    (archive) => archive._id === element.productId
                   ) ? (
-                    <h5>Creation deleted</h5>
+                    <h5>archive deleted</h5>
                   ) : (
                     <p className="bold">
                       {
-                        creations.find(
-                          (creation) => creation._id === element.productId
+                        archives.find(
+                          (archive) => archive._id === element.productId
                         ).title
                       }
                     </p>
@@ -58,18 +58,18 @@ const ProfileOrders = () => {
             })}
 
             <p>
-              {/* Ternary on order total price if creation deleted by artist */}
+              {/* Ternary on order total price if archive deleted by contributor */}
               Total price:{" "}
               <span className="bold">
-                {order.creations.reduce(
+                {order.archives.reduce(
                   (total, element) =>
                     total +
-                    (!creations.find(
-                      (creation) => creation._id === element.productId
+                    (!archives.find(
+                      (archive) => archive._id === element.productId
                     )
                       ? 0
-                      : creations.find(
-                          (creation) => creation._id === element.productId
+                      : archives.find(
+                          (archive) => archive._id === element.productId
                         ).price) *
                       element.quantity,
                   0

@@ -7,38 +7,38 @@ import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
 import Profile from "./pages/Profile";
 import ProfileOrders from "./pages/ProfileOrders/ProfileOrders";
-import ProfileUpdateArtist from "./pages/ProfileUpdateArtist/ProfileUpdateArtist";
-import ProfileUpdateCreation from "./pages/ProfileUpdateCreation/ProfileUpdateCreation";
+import ProfileUpdatecontributor from "./pages/ProfileUpdatecontributor/ProfileUpdatecontributor";
+import ProfileUpdatearchive from "./pages/ProfileUpdatearchive/ProfileUpdatearchive";
 import PrivateRoute from "./components/ProtectedRoute/PrivateRoute";
-import IsArtistRoute from "./components/ProtectedRoute/IsArtistRoute";
+import IscontributorRoute from "./components/ProtectedRoute/IscontributorRoute";
 import LoggedOut from "./components/LoggedOut/LoggedOut";
 import Cart from "./pages/Cart/Cart";
-import ArtistsList from "./pages/ArtistsList/ArtistsList";
-import OneArtist from "./pages/OneArtist/OneArtist";
-import CreationsList from "./pages/CreationsList/CreationsList";
-import OneCreation from "./pages/OneCreation/OneCreation";
+import contributorsList from "./pages/contributorsList/contributorsList";
+import Onecontributor from "./pages/Onecontributor/Onecontributor";
+import archivesList from "./pages/archivesList/archivesList";
+import Onearchive from "./pages/Onearchive/Onearchive";
 import NotFound from "./pages/NotFound/NotFound";
 import OrderValidation from "./pages/OrderValidation/OrderValidation";
 import Footer from "./components/Footer/Footer";
-import FormCreateArtist from "./components/Forms/FormCreateArtist";
+import FormCreatecontributor from "./components/Forms/FormCreatecontributor";
 import FormCreateObject from "./components/Forms/FormCreateObject";
 
 function App() {
-  const [creations, setCreations] = useState([]);
-  const [artists, setArtists] = useState([]);
+  const [archives, setarchives] = useState([]);
+  const [contributors, setcontributors] = useState([]);
 
   useEffect(() => {
-    apiHandler.getAllCreations().then((res) => {
-      setCreations(res);
+    apiHandler.getAllarchives().then((res) => {
+      setarchives(res);
     });
 
-    apiHandler.getAllArtists().then((data) => {
-      setArtists(data);
+    apiHandler.getAllcontributors().then((data) => {
+      setcontributors(data);
     });
   }, []);
 
-  // If there is no creations or no artists load the page display "Loading"
-  if (!creations.length || !artists.length) {
+  // If there is no archives or no contributors load the page display "Loading"
+  if (!archives.length || !contributors.length) {
     return <div className="middle-div-min">Loading...</div>;
   }
 
@@ -49,12 +49,12 @@ function App() {
         <Routes>
           {/* ROUTES FOR ALL*/}
           <Route path="/" element={<HomePage />} />
-          {/* All artists */}
-          <Route path="/artists" element={<ArtistsList />} />
-          {/* All creations */}
-          <Route path="/creations" element={<CreationsList />} />
-          {/* One artist */}
-          <Route path="/artist/:id" element={<OneArtist />} />
+          {/* All contributors */}
+          <Route path="/contributors" element={<contributorsList />} />
+          {/* All archives */}
+          <Route path="/archives" element={<archivesList />} />
+          {/* One contributor */}
+          <Route path="/contributor/:id" element={<Onecontributor />} />
           {/* NotFound */}
           <Route path="*" element={<NotFound />} />
 
@@ -63,31 +63,31 @@ function App() {
             {/* Profile */}
             <Route path="/profile" element={<Profile />} />
             <Route path="/profile/orders" element={<ProfileOrders />} />
-            <Route element={<IsArtistRoute />}>
+            <Route element={<IscontributorRoute />}>
               <Route
-                path="/profile/artists/createartist"
-                element={<FormCreateArtist />}
+                path="/profile/contributors/createcontributor"
+                element={<FormCreatecontributor />}
               />
               <Route
-                path="/profile/artists/createobject"
+                path="/profile/contributors/createobject"
                 element={<FormCreateObject />}
               />
               <Route
-                path="/profile/artists/updateobjectpage/:id"
-                element={<ProfileUpdateCreation />}
+                path="/profile/contributors/updateobjectpage/:id"
+                element={<ProfileUpdatearchive />}
               />
               <Route
-                path="/profile/artists/updateartistpage"
-                element={<ProfileUpdateArtist />}
+                path="/profile/contributors/updatecontributorpage"
+                element={<ProfileUpdatecontributor />}
               />
             </Route>
 
             {/* Orders */}
             <Route path="/cart" element={<Cart />} />
             <Route path="/order/validation" element={<OrderValidation />} />
-            {/* Creations */}
-            <Route path="/creations" element={<CreationsList />} />
-            <Route path="/creations/:id" element={<OneCreation />} />
+            {/* archives */}
+            <Route path="/archives" element={<archivesList />} />
+            <Route path="/archives/:id" element={<Onearchive />} />
             <Route path="*" element={<NotFound />} />
           </Route>
           {/* ROUTES FOR LOGGEDOUT */}

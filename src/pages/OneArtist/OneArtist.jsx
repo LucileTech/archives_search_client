@@ -2,59 +2,61 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import apiHandler from "./../../api/apiHandler";
-import "./OneArtist.css";
+import "./Onecontributor.css";
 
-const OneArtist = () => {
-  const [artist, setArtist] = useState([]);
-  const [artistCreation, setArtistCreation] = useState([]); //To get the specific creations of an artist
+const Onecontributor = () => {
+  const [contributor, setcontributor] = useState([]);
+  const [contributorarchive, setcontributorarchive] = useState([]); //To get the specific archives of an contributor
 
-  // Get artist by id and the creations of this artist
+  // Get contributor by id and the archives of this contributor
   const params = useParams();
   const id = params.id;
 
-  // To get one artist by his id
+  // To get one contributor by his id
   useEffect(() => {
-    apiHandler.getOneArtist(id).then((res) => {
-      setArtist(res);
+    apiHandler.getOnecontributor(id).then((res) => {
+      setcontributor(res);
     });
-    // To get specific creations of the artist by his id
-    apiHandler.getArtistCreations(id).then((res) => {
-      setArtistCreation(res);
+    // To get specific archives of the contributor by his id
+    apiHandler.getcontributorarchives(id).then((res) => {
+      setcontributorarchive(res);
     });
   }, []);
 
-  // Loading section if no artist or no artist creations
-  if (!artist) {
+  // Loading section if no contributor or no contributor archives
+  if (!contributor) {
     return <div className="middle-div-min">Loading...</div>;
   }
-  if (!artistCreation) {
+  if (!contributorarchive) {
     return <div className="middle-div-min">Loading...</div>;
   }
 
   return (
     <div className="middle-div-min">
-      <div className="artist-presentation">
+      <div className="contributor-presentation">
         <img
-          className="artist-picture"
-          src={artist.picture}
-          alt={artist.name}
+          className="contributor-picture"
+          src={contributor.picture}
+          alt={contributor.name}
         />
-        <div className="artist-details">
-          <h2 className="artist-details-name">{artist.name}</h2>
-          <p className="artist-details-description">{artist.description}</p>
+        <div className="contributor-details">
+          <h2 className="contributor-details-name">{contributor.name}</h2>
+          <p className="contributor-details-description">
+            {contributor.description}
+          </p>
         </div>
       </div>
 
-      <div className="object-of-artist-details">
-        <h3 className="one-artist-creations">CREATIONS</h3>
-        <div className="all-creations-artist-page">
-          {/* To display each creation of the one artist */}
-          {artistCreation.map((element) => {
+      <div className="object-of-contributor-details">
+        <h3 className="one-contributor-archives">archiveS</h3>
+        <div className="all-archives-contributor-page">
+          {/* To display each archive of the one contributor */}
+          {contributorarchive.map((element) => {
             return (
               <div key={element._id}>
-                <Link to={`/creations/${element._id}`}>
+                <Link to={`/archives/${element._id}`}>
                   <img
-                    className="creations-images-one-artist"
+                    className="archives-images-one-contributor"
                     src={element.img}
                     alt={element.title}
                   />
@@ -68,4 +70,4 @@ const OneArtist = () => {
   );
 };
 
-export default OneArtist;
+export default Onecontributor;

@@ -4,26 +4,26 @@
   font-family: "Montserrat";
 }
 
-.artist-presentation {
+.contributor-presentation {
   display: flex;
   flex-direction: row;
 }
 
-.artist-details {
+.contributor-details {
   display: flex;
   flex-direction: column;
   margin-top: 5%;
 }
 
-.artist-details-name {
+.contributor-details-name {
   margin-bottom: 5%;
 }
 
-.artist-details-description {
+.contributor-details-description {
   width: 75%;
 }
 
-.artist-picture {
+.contributor-picture {
   height: 15rem;
   width: 15rem;
   object-fit: cover;
@@ -33,7 +33,7 @@
   margin-bottom: 5%;
 }
 
-.object-of-artist-details {
+.object-of-contributor-details {
   background-color: #22223b;
 
   font-family: "Montserrat";
@@ -46,12 +46,12 @@
   color: rgba(255, 255, 255, 0.6);
 }
 
-.one-artist-creations {
+.one-contributor-archives {
   margin: 1rem;
   padding-top: 1rem;
 }
 
-.creations-images-one-artist {
+.archives-images-one-contributor {
   height: 17rem;
   width: 17rem;
   object-fit: cover;
@@ -60,14 +60,14 @@
   border-radius: 50%;
 }
 
-.all-creations-artist-page {
+.all-archives-contributor-page {
   display: flex;
   flex-direction: row;
   overflow: scroll;
 }
 
 @media (max-width: 800px) {
-  .artist-presentation {
+  .contributor-presentation {
     flex-wrap: wrap;
     padding-left: 1rem;
   }

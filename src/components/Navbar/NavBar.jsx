@@ -22,26 +22,26 @@ const NavBar = () => {
           </Link>
         </div>
 
-        {/* Redirection to "All artists" page and "All creations" pages */}
+        {/* Redirection to "All contributors" page and "All archives" pages */}
         <div className="nav-hamburger-responsive">
           <div id="navbar-center-responsive" className="navbar-center">
-            <div className="artists-creations">
+            <div className="contributors-archives">
               <div className="link-navbar-responsive">
                 <Link
-                  to="/artists"
-                  id="link-all-artists"
-                  className="navbar-artist-creation-link"
+                  to="/contributors"
+                  id="link-all-contributors"
+                  className="navbar-contributor-archive-link"
                 >
-                  All Artists
+                  All contributors
                 </Link>
               </div>
               <div className="link-navbar-responsive">
                 <Link
-                  to="/creations"
-                  id="link-all-creations"
-                  className="navbar-artist-creation-link"
+                  to="/archives"
+                  id="link-all-archives"
+                  className="navbar-contributor-archive-link"
                 >
-                  All Creations
+                  All archives
                 </Link>
               </div>
             </div>

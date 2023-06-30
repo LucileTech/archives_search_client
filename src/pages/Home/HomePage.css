@@ -35,11 +35,11 @@ h6 {
   align-content: center;
 }
 
-.artists-home-page {
+.contributors-home-page {
   background-color: #22223b;
 }
 
-.creations-home-page {
+.archives-home-page {
   background-color: #22223b;
 }
 
@@ -47,7 +47,7 @@ h6 {
   .link-navbar-responsive {
     padding-bottom: 0.2rem;
   }
-  .artists-creations,
+  .contributors-archives,
   .responsive-loggin {
     margin-left: 0.5rem;
   }
@@ -57,7 +57,7 @@ h6 {
   #button-log-out-navbar {
     font-size: 10%;
   }
-  .navbar-artist-creation-link {
+  .navbar-contributor-archive-link {
     font-size: 10%;
   }
   .logo-nav-bar {

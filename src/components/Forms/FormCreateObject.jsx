@@ -5,7 +5,7 @@ import useFormCreate from "../../hooks/useFormCreate";
 
 import "./FormCreateObject.css";
 
-const CreateFormCreation = () => {
+const CreateFormarchive = () => {
   const navigate = useNavigate();
   const [error, setError] = useState(null);
 
@@ -18,21 +18,21 @@ const CreateFormCreation = () => {
     price: 0,
   });
 
-  // on submission of the form handleSubmitCreationForm pass the informations of the inputs to formData
-  const handleSubmitCreationForm = async (e) => {
+  // on submission of the form handleSubmitarchiveForm pass the informations of the inputs to formData
+  const handleSubmitarchiveForm = async (e) => {
     e.preventDefault();
-    const formDataCreation = new FormData();
-    formDataCreation.append("title", formData.title);
-    formDataCreation.append("description", formData.description);
-    formDataCreation.append("img", formData.img);
-    formDataCreation.append("categories", formData.categories.toLowerCase());
-    formDataCreation.append("price", formData.price);
+    const formDataarchive = new FormData();
+    formDataarchive.append("title", formData.title);
+    formDataarchive.append("description", formData.description);
+    formDataarchive.append("img", formData.img);
+    formDataarchive.append("categories", formData.categories.toLowerCase());
+    formDataarchive.append("price", formData.price);
 
-    // createCreation is a post that creates a new creation
+    // createarchive is a post that creates a new archive
     try {
-      const data = await apiHandler.createCreation(formDataCreation);
+      const data = await apiHandler.createarchive(formDataarchive);
       resetForm();
-      navigate("/creations/" + data._id);
+      navigate("/archives/" + data._id);
     } catch (err) {
       setError(err);
     }
@@ -44,33 +44,33 @@ const CreateFormCreation = () => {
   return (
     <div className="middle-div-min">
       <form
-        onSubmit={handleSubmitCreationForm}
+        onSubmit={handleSubmitarchiveForm}
         className="create-all-object-details-page"
       >
-        {/* Pass a picture URL of the new creation thanks to Cloudinary */}
-        <div className="create-creation-presentation">
-          <div className="create-creation-picture">
+        {/* Pass a picture URL of the new archive thanks to Cloudinary */}
+        <div className="create-archive-presentation">
+          <div className="create-archive-picture">
             <input
               type="file"
-              id="create-creation-picture"
+              id="create-archive-picture"
               name="img"
               onChange={handleChangeData}
             />
           </div>
-          {/* New creation name */}
-          <div className="create-creation-details">
+          {/* New archive name */}
+          <div className="create-archive-details">
             <input
-              className="create-creation-details-title"
+              className="create-archive-details-title"
               type="text"
               value={title}
               name="title"
               id="title"
               onChange={handleChangeData}
-              placeholder="Your creation name"
+              placeholder="Your archive name"
             />
-            {/* New creation description */}
+            {/* New archive description */}
             <textarea
-              className="create-creation-details-description"
+              className="create-archive-details-description"
               type="text"
               value={description}
               name="description"
@@ -78,7 +78,7 @@ const CreateFormCreation = () => {
               onChange={handleChangeData}
               placeholder="Your description here"
             ></textarea>
-            {/* New creation category */}
+            {/* New archive category */}
             <h4>
               <label htmlFor="description">Categories: </label>
               <input
@@ -92,8 +92,8 @@ const CreateFormCreation = () => {
             </h4>
           </div>
         </div>
-        {/* New creation price */}
-        <div className="create-creation-price-and-button">
+        {/* New archive price */}
+        <div className="create-archive-price-and-button">
           <h3>
             <label htmlFor="description">Price: </label>
             <input
@@ -109,7 +109,7 @@ const CreateFormCreation = () => {
           {/* Display the errors send by the back */}
           {error && <p>{error}</p>}
 
-          <button className="create-add-to-profile-button-creation-page">
+          <button className="create-add-to-profile-button-archive-page">
             ADD TO YOUR PROFILE
           </button>
         </div>
@@ -118,4 +118,4 @@ const CreateFormCreation = () => {
   );
 };
 
-export default CreateFormCreation;
+export default CreateFormarchive;

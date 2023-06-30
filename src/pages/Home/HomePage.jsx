@@ -1,6 +1,6 @@
 import React from "react";
-import AllArtists from "../../components/AllArtists/AllArtists";
-import AllCreations from "../../components/AllCreations/AllCreations";
+import Allcontributors from "../../components/Allcontributors/Allcontributors";
+import Allarchives from "../../components/Allarchives/Allarchives";
 import "./HomePage.css";
 
 const HomePage = () => {
@@ -17,13 +17,13 @@ const HomePage = () => {
           handcrafted pieces to art treasures...
         </h6>
       </section>
-      {/* Section that display some artist + view more */}
-      <section className="artists-home-page">
-        <AllArtists></AllArtists>
+      {/* Section that display some contributor + view more */}
+      <section className="contributors-home-page">
+        <Allcontributors></Allcontributors>
       </section>
-      {/* Section that display some creation + view more */}
-      <section className="creations-home-page">
-        <AllCreations></AllCreations>
+      {/* Section that display some archive + view more */}
+      <section className="archives-home-page">
+        <Allarchives></Allarchives>
       </section>
     </div>
   );

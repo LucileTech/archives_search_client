@@ -18,10 +18,10 @@ const Cart = () => {
   }, []);
 
   console.log("order cart", orderCart);
-  // Increment quantity of creation(s) in the cart
-  const handleIncrementCreation = async (id) => {
+  // Increment quantity of archive(s) in the cart
+  const handleIncrementarchive = async (id) => {
     try {
-      const orderIncremented = await apiHandler.patchIncrementCreationToOrder(
+      const orderIncremented = await apiHandler.patchIncrementarchiveToOrder(
         id
       );
       fetchCart();
@@ -31,11 +31,11 @@ const Cart = () => {
     // });
   };
 
-  // Decrement quantity of creation(s) in the cart
+  // Decrement quantity of archive(s) in the cart
 
-  const handleDecrementCreation = async (id) => {
+  const handleDecrementarchive = async (id) => {
     try {
-      const orderDecremented = await apiHandler.patchDecrementCreationToOrder(
+      const orderDecremented = await apiHandler.patchDecrementarchiveToOrder(
         id
       );
       fetchCart();
@@ -66,19 +66,19 @@ const Cart = () => {
   };
 
   // if the cart is empty
-  if (!orderCart?.creations?.length) {
+  if (!orderCart?.archives?.length) {
     return (
       <div className="middle-div-min">You don't have any cart... yet !</div>
     );
   }
 
-  const creationOfOrder = orderCart.creations;
+  const archiveOfOrder = orderCart.archives;
 
-  //Handle event for the delete button of one creation
-  const handleDeleteCreation = async (id) => {
+  //Handle event for the delete button of one archive
+  const handleDeletearchive = async (id) => {
     console.log(id);
     try {
-      const updatedOrder = await apiHandler.deleteCreationCart(id);
+      const updatedOrder = await apiHandler.deletearchiveCart(id);
       console.log("=========", { updatedOrder });
       setOrderCart(updatedOrder);
     } catch (error) {
@@ -89,25 +89,25 @@ const Cart = () => {
   return (
     <div className="middle-div-min">
       <div>
-        <div className="creation-details-total-price-section">
-          <ul className="all-creation-order">
-            {/* Mapping through creations ordered populated by creations */}
-            {creationOfOrder.map((element) => {
+        <div className="archive-details-total-price-section">
+          <ul className="all-archive-order">
+            {/* Mapping through archives ordered populated by archives */}
+            {archiveOfOrder.map((element) => {
               const product = element.productId;
               return (
                 <div key={product._id}>
-                  <li className="each-creation-order">
-                    <img className="creation-image-order" src={product.img} />
-                    <div className="info-creation-order">
+                  <li className="each-archive-order">
+                    <img className="archive-image-order" src={product.img} />
+                    <div className="info-archive-order">
                       <h4>
                         <div className="title-trashbin-order-section">
                           {product.title}
 
-                          <button className="trash-bin-creation-cart-button">
+                          <button className="trash-bin-archive-cart-button">
                             <img
-                              onClick={() => handleDeleteCreation(product._id)}
+                              onClick={() => handleDeletearchive(product._id)}
                               id={product._id}
-                              className="trash-bin-creation-cart"
+                              className="trash-bin-archive-cart"
                               src="images/logos/trash-bin.png"
                               alt="trashbin-image"
                             ></img>
@@ -115,12 +115,12 @@ const Cart = () => {
                         </div>
                       </h4>
 
-                      <div className="quantity-creation-order">
+                      <div className="quantity-archive-order">
                         <p>Quantity:</p>
                         <button
                           className="decrement-button"
                           id={product._id}
-                          onClick={() => handleDecrementCreation(product._id)}
+                          onClick={() => handleDecrementarchive(product._id)}
                         >
                           {" "}
                           -{" "}
@@ -129,7 +129,7 @@ const Cart = () => {
                         <button
                           className="increment-button"
                           id={product._id}
-                          onClick={() => handleIncrementCreation(product._id)}
+                          onClick={() => handleIncrementarchive(product._id)}
                         >
                           {" "}
                           +{" "}
@@ -159,7 +159,7 @@ const Cart = () => {
                 </div>
                 <div>
                   {/* To get the total price of the order */}
-                  {creationOfOrder.reduce(
+                  {archiveOfOrder.reduce(
                     (total, element) =>
                       total + element.productId.price * element.quantity,
                     0

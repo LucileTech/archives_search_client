@@ -10,7 +10,7 @@ const FormSignUp = () => {
     name: "",
     email: "",
     password: "",
-    isArtist: false,
+    iscontributor: false,
   });
   const [error, setError] = useState(null);
 
@@ -43,12 +43,12 @@ const FormSignUp = () => {
           <h2 className="register-word-log-up-page">Register</h2>
 
           <div className="signup-checkbox">
-            <label htmlFor="isArtist">Artist ?</label>
+            <label htmlFor="iscontributor">contributor ?</label>
             <input
               type="checkbox"
-              id="isArtist"
-              name="isArtist"
-              checked={values.isArtist}
+              id="iscontributor"
+              name="iscontributor"
+              checked={values.iscontributor}
               onChange={handleChange}
             />
           </div>
